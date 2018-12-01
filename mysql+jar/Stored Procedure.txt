@@ -1,0 +1,6 @@
+delimiter $$
+create procedure countno(out count int)
+begin
+set count = (select count(user_id) from user);
+end $$
+

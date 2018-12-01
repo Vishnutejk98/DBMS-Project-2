@@ -1,0 +1,8 @@
+delimiter $$
+create trigger inc
+before insert on
+purchase
+for each row
+begin
+update product set quantity= quantity-1 where product_no=new.product_id;
+end $$
